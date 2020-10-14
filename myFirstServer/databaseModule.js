@@ -4,7 +4,7 @@ mongoose.connect('mongodb://localhost/webbserver2', { useNewUrlParser: true, use
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
-    // we're connected!
+  // we're connected!
 });
 
 const personSchema = new mongoose.Schema({
@@ -16,13 +16,10 @@ const personSchema = new mongoose.Schema({
 const Person = mongoose.model('Person', personSchema);
 
 exports.storePerson = (name, email, age) => {
-    var person = new Person({
-        name: name, 
-        email: email, 
-        age: age 
-       })
-    
-     person.save((result)=>{
-       console.log(result)
-     })
- }
+  var person = new Person({
+    name: name,
+    email: email,
+    age: age
+  })
+  person.save()
+}

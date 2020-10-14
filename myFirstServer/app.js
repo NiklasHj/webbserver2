@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-  databaseModule.storeElement(person)
+  databaseModule.storePerson(req.body.name, req.body.email, req.body.age)
 
   res.render("pages/index.ejs", { name: " " + req.body.name })
 })

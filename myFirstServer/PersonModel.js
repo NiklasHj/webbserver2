@@ -18,6 +18,6 @@ exports.newPerson = (name, email, age) => {
 }
 
 exports.getAllPeople = async () => {
-    let people = Person.find({})
+    let people = await Person.find({})
     return people
 }
